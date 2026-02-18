@@ -37,7 +37,6 @@ import { Observable } from 'rxjs';
           <div class="stats">
             <ng-container *ngIf="stats$ | async as stats">
               <app-stat-card *ngFor="let s of stats" [title]="s.title" [value]="s.value" [colorClass]="s.color">
-                <span icon style="font-size:20px">{{ s.id === 'branches' ? '🏬' : s.id === 'employees' ? '👥' : s.id === 'income' ? '💰' : s.id === 'expenses' ? '💸' : '📦' }}</span>
               </app-stat-card>
             </ng-container>
           </div>
@@ -71,14 +70,28 @@ import { Observable } from 'rxjs';
       </div>
 
       <aside class="right-sidebar">
+        <div class="right-sidebar-header">
+          <select class="location-select">
+            <option>Все</option>
+            <option>Филиал A</option>
+            <option>Филиал B</option>
+          </select>
+        </div>
+
         <div class="calendar card">
-          <div class="cal-head">April 2022</div>
+          <div class="cal-nav">
+            <button class="cal-btn">&lt;</button>
+            <div class="cal-head">February 2026</div>
+            <button class="cal-btn">&gt;</button>
+          </div>
           <div class="cal-body">
             <div class="cal-grid">
               <div class="cal-day muted">S</div><div class="cal-day muted">M</div><div class="cal-day muted">T</div><div class="cal-day muted">W</div><div class="cal-day muted">T</div><div class="cal-day muted">F</div><div class="cal-day muted">S</div>
-              <div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div>
-              <div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div>
-              <div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell active">16</div><div class="cal-cell active">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div>
+              <div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell">1</div>
+              <div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div>
+              <div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div>
+              <div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell active">18</div><div class="cal-cell active">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div>
+              <div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell"></div>
             </div>
           </div>
         </div>
@@ -119,13 +132,20 @@ import { Observable } from 'rxjs';
     .section-title{margin:0 0 16px 0;font-size:1.1rem;font-weight:700;color:#0f172a}
 
     .right-sidebar{position:fixed;right:0;top:0;height:100vh;width:320px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);padding:28px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;border-left:1px solid rgba(2,6,23,0.06)}
+    .right-sidebar-header{display:flex;align-items:center}
+    .location-select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(2,6,23,0.1);background:#fff;font-size:0.9rem;font-weight:500;color:#0f172a;cursor:pointer;transition:all 0.2s}
+    .location-select:hover{border-color:rgba(2,6,23,0.2);background:#fbfdff}
+    .location-select:focus{outline:none;border-color:#1e40af;box-shadow:0 0 0 3px rgba(30,64,175,0.1)}
     .right-sidebar .card{background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:12px;box-shadow:0 2px 8px rgba(2,6,23,0.04);border:1px solid rgba(16,24,40,0.05)}
     .right-sidebar .card h4{margin:0 0 12px 0;font-size:0.95rem;font-weight:700;color:#0f172a}
-    .cal-head{text-align:center;font-weight:700;margin-bottom:14px;color:#0f172a;font-size:0.95rem}
+    .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
+    .cal-btn{background:transparent;border:1px solid rgba(2,6,23,0.1);border-radius:6px;width:28px;height:28px;cursor:pointer;color:#0f172a;font-weight:600;transition:all 0.2s}
+    .cal-btn:hover{background:rgba(2,6,23,0.05);border-color:rgba(2,6,23,0.2)}
+    .cal-head{text-align:center;font-weight:700;color:#0f172a;font-size:0.9rem;flex:1}
     .cal-body{padding:8px 0}
-    .cal-grid{display:grid;grid-template-columns:repeat(7,28px);gap:5px;justify-content:center}
-    .cal-cell{height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:0.8rem;font-weight:500}
-    .cal-day.muted{font-size:0.7rem;font-weight:600;color:#d1d5db}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,26px);gap:4px;justify-content:center}
+    .cal-cell{height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:0.75rem;font-weight:500}
+    .cal-day.muted{font-size:0.65rem;font-weight:600;color:#d1d5db}
     .cal-cell.active{background:linear-gradient(90deg,#1e40af,#0284c7);color:#fff;font-weight:700}
 
     .rates-list{display:flex;flex-direction:column;gap:10px}

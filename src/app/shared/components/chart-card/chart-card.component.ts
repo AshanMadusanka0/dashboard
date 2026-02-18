@@ -22,11 +22,11 @@ Chart.register(...registerables);
   `,
   styles: [
     `:host{display:block}
-    .chart-card{background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55)); border-radius:12px; padding:14px; box-shadow:0 2px 8px rgba(2,6,23,0.04); border:1px solid rgba(16,24,40,0.05); height:90%}
+    .chart-card{background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55)); border-radius:12px; padding:14px; box-shadow:0 2px 8px rgba(2,6,23,0.04); border:1px solid rgba(16,24,40,0.05); height:100%}
     .chart-card__header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:10px}
     .chart-card__header h4{margin:0; font-size:0.9rem; font-weight:600; color:#0f172a}
-    .chart-card__body{min-height:200px; display:flex; align-items:center; justify-content:center}
-    canvas{width:100% !important; height:280px !important}
+    .chart-card__body{min-height:220px; display:flex; align-items:center; justify-content:center}
+    canvas{width:100% !important; height:200px !important}
     `
   ]
 })
