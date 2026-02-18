@@ -11,22 +11,11 @@ import { CommonModule } from '@angular/common';
       <div class="logo"> <!-- circular logo -->
         <div class="logo-inner"></div>
       </div>
-      <!-- <nav class="nav">
-        <a class="nav-item active" title="Home">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="nav-item" title="Orders">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M5 7v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="nav-item" title="Products">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73L12 3 4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73L12 21l8-3.27A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="nav-item" title="Customers">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.657 0 3-1.567 3-3.5S17.657 4 16 4s-3 1.567-3 3.5S14.343 11 16 11zM6 11c1.657 0 3-1.567 3-3.5S7.657 4 6 4 3 5.567 3 7.5 4.343 11 6 11zM16 13c-2.761 0-4 1.791-4 4v1h8v-1c0-2.209-1.239-4-4-4zM6 13c-2.761 0-4 1.791-4 4v1h8v-1c0-2.209-1.239-4-4-4z" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </nav> -->
+      
 
       <nav class="nav">
+
+
   <!-- Home -->
   <a class="nav-item active" title="Home">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -131,9 +120,15 @@ import { CommonModule } from '@angular/common';
 </nav>
 
 
-      
       <div class="side-cta"> 
-        <button class="logout">⤴</button>
+        <button class="menu-toggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="logout" title="Logout">⤴</button>
       </div>
     </aside>
   `,
@@ -146,7 +141,9 @@ import { CommonModule } from '@angular/common';
     .nav-item{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);opacity:1;border:1px solid rgba(255,255,255,0.05);transition:all 0.2s;cursor:pointer}
     .nav-item:hover{color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.05)}
     .nav-item.active{background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05)); box-shadow:0 6px 20px rgba(2,6,23,0.25); color:#fff; border:1px solid rgba(255,255,255,0.1)}
-    .side-cta{margin-top:auto}
+    .side-cta{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+    .menu-toggle{background:transparent;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:8px 10px;border-radius:8px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;width:48px;height:48px}
+    .menu-toggle:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.9)}
     .logout{background:transparent;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:8px 10px;border-radius:8px;cursor:pointer;transition:all 0.2s}
     .logout:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8)}
     `

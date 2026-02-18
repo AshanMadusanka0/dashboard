@@ -129,8 +129,8 @@ import { Observable } from 'rxjs';
   styles: [
     `:host{display:block;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     .app-layout{display:flex;gap:0;min-height:100vh}
-    .main-area{flex:1;padding:28px 32px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);overflow-y:auto;margin-left:72px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid rgba(2,6,23,0.08);background:linear-gradient(180deg,#f3f6fb,#eef3f8)}
+    .main-area{flex:1;padding:20px 24px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);overflow-y:auto;margin-left:72px;max-height:100vh}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid rgba(2,6,23,0.08);background:linear-gradient(180deg,#f3f6fb,#eef3f8)}
     .topbar h1{margin:0;font-size:1.6rem;font-weight:700;color:#0f172a;min-width:120px;white-space:nowrap}
     .tabs{display:flex;gap:8px;flex:1}
     .tab{background:transparent;border:0;padding:10px 16px;border-radius:6px;color:#6b7280;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;white-space:nowrap}
@@ -142,12 +142,12 @@ import { Observable } from 'rxjs';
     .filter:hover{border-color:rgba(2,6,23,0.3);background:#fbfdff}
     .filter:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.1)}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-right:320px;height:60%}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;width:97%;margin-bottom:8px;height:100px;padding:10px 0px}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-right:320px}
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;width:97%;height:85px;padding:6px 0px}
     
-    .stat-item{padding:14px 10px;border-radius:10px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:50px}
-    .stat-label{font-size:0.8rem;font-weight:600;margin-bottom:6px;line-height:1.2}
-    .stat-value{font-size:1.0rem;font-weight:700}
+    .stat-item{padding:10px 8px;border-radius:10px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:auto}
+    .stat-label{font-size:0.7rem;font-weight:600;margin-bottom:4px;line-height:1.1}
+    .stat-value{font-size:0.95rem;font-weight:700}
     
     .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47;box-shadow:0 4px 12px rgba(139,111,71,0.12)}
     .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc;box-shadow:0 4px 12px rgba(0,102,204,0.12)}
@@ -155,10 +155,10 @@ import { Observable } from 'rxjs';
     .stat-green{background:#d4f5e8;border-color:#a8e6d0;color:#0d7f5c;box-shadow:0 4px 12px rgba(13,127,92,0.12)}
     .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333;box-shadow:0 4px 12px rgba(204,51,51,0.12)}
 
-    .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%;height:95%}
-    .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch}
-    .side-cards{display:flex;flex-direction:column;gap:16px;height:50%} 
-    .side-cards app-chart-card{height:90%;width:90%}
+    .content-row{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
+    .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:12px;align-items:stretch;height:auto}
+    .side-cards{display:flex;flex-direction:column;gap:12px}
+    .side-cards app-chart-card{height:auto}
 
     .table-wrap{background:transparent;width:100%}
     .section-title{margin:0 0 16px 0;font-size:1.1rem;font-weight:700;color:#0f172a}
