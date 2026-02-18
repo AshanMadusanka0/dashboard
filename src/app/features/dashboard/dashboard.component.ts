@@ -17,18 +17,20 @@ import { Observable } from 'rxjs';
       <app-sidebar />
       <div class="main-area">
         <header class="topbar">
-          <div class="title-group">
-            <h2>Главная</h2>
-            <div class="tabs">
-              <button class="tab active">Статистика</button>
-              <button class="tab">Заведения</button>
-              <button class="tab">Доступ</button>
-            </div>
+          <h1>Главная</h1>
+          <div class="tabs">
+            <button class="tab active">Статистика</button>
+            <button class="tab">Заведения</button>
+            <button class="tab">Доступ</button>
+            <button class="tab">Инвестиции</button>
+            <button class="tab">ОДР</button>
           </div>
           <div class="actions">
+            <label>Текущая заведений</label>
             <select class="filter">
               <option>Все</option>
               <option>Филиал A</option>
+              <option>Филиал B</option>
             </select>
           </div>
         </header>
@@ -112,14 +114,17 @@ import { Observable } from 'rxjs';
     `:host{display:block;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     .app-layout{display:flex;gap:0;min-height:100vh}
     .main-area{flex:1;padding:28px 32px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);overflow-y:auto;margin-left:72px}
-    .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;gap:20px}
-    .title-group{flex:1}
-    .title-group h2{margin:0;font-size:1.8rem;font-weight:700;color:#0f172a}
-    .tabs{display:flex;gap:2px;margin-top:14px}
-    .tab{background:transparent;border:0;padding:10px 16px;border-radius:8px;color:#9ca3af;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.2s}
-    .tab:hover{color:#6b7280}
-    .tab.active{background:linear-gradient(90deg,#eef2ff,#f0fdf4);color:#0f172a;box-shadow:0 2px 8px rgba(2,6,23,0.06)}
-    .filter{padding:10px 14px;border-radius:8px;border:1px solid rgba(2,6,23,0.1);background:#fff;font-size:0.9rem;cursor:pointer;font-weight:500}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid rgba(2,6,23,0.08);background:linear-gradient(180deg,#f3f6fb,#eef3f8)}
+    .topbar h1{margin:0;font-size:1.6rem;font-weight:700;color:#0f172a;min-width:120px;white-space:nowrap}
+    .tabs{display:flex;gap:8px;flex:1}
+    .tab{background:transparent;border:0;padding:10px 16px;border-radius:6px;color:#6b7280;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+    .tab:hover{color:#0f172a;background:rgba(2,6,23,0.04)}
+    .tab.active{background:#1e3a8a;color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(30,58,138,0.2)}
+    .actions{display:flex;align-items:center;gap:12px;white-space:nowrap}
+    .actions label{font-size:0.9rem;font-weight:600;color:#0f172a}
+    .filter{padding:8px 12px;border-radius:6px;border:1px solid rgba(2,6,23,0.15);background:#fff;font-size:0.9rem;cursor:pointer;font-weight:500;color:#0f172a;transition:all 0.2s;min-width:100px}
+    .filter:hover{border-color:rgba(2,6,23,0.3);background:#fbfdff}
+    .filter:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.1)}
 
     .grid{display:grid;grid-template-columns:1fr;gap:20px}
     .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;width:100%}
