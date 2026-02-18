@@ -149,11 +149,11 @@ import { Observable } from 'rxjs';
     .stat-label{font-size:0.8rem;font-weight:600;margin-bottom:6px;line-height:1.2}
     .stat-value{font-size:1.0rem;font-weight:700}
     
-    .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47}
-    .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc}
-    .stat-yellow{background:#fffef0;border-color:#f0e8d0;color:#8b8547}
-    .stat-green{background:#d4f5e8;border-color:#a8e6d0;color:#0d7f5c}
-    .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333}
+    .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47;box-shadow:0 4px 12px rgba(139,111,71,0.12)}
+    .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc;box-shadow:0 4px 12px rgba(0,102,204,0.12)}
+    .stat-yellow{background:#fffef0;border-color:#f0e8d0;color:#8b8547;box-shadow:0 4px 12px rgba(139,133,71,0.12)}
+    .stat-green{background:#d4f5e8;border-color:#a8e6d0;color:#0d7f5c;box-shadow:0 4px 12px rgba(13,127,92,0.12)}
+    .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333;box-shadow:0 4px 12px rgba(204,51,51,0.12)}
 
     .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%;height:95%}
     .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch}
