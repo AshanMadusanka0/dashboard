@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 @Component({
   standalone: true,
   selector: 'app-dashboard',
-  imports: [CommonModule, NgIf, NgForOf, AsyncPipe, SidebarComponent, StatCardComponent, ChartCardComponent, DataTableComponent],
+  imports: [CommonModule, NgIf, NgForOf, AsyncPipe, SidebarComponent, ChartCardComponent, DataTableComponent],
   template: `
     <div class="app-layout">
       <app-sidebar />
@@ -142,12 +142,12 @@ import { Observable } from 'rxjs';
     .filter:hover{border-color:rgba(2,6,23,0.3);background:#fbfdff}
     .filter:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.1)}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;width:100%;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-right:320px}
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;width:100%;margin-bottom:8px}
     
-    .stat-item{padding:20px 16px;border-radius:12px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:110px}
-    .stat-label{font-size:0.95rem;font-weight:600;margin-bottom:12px;line-height:1.3}
-    .stat-value{font-size:1.8rem;font-weight:700}
+    .stat-item{padding:14px 10px;border-radius:10px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:90px}
+    .stat-label{font-size:0.8rem;font-weight:600;margin-bottom:6px;line-height:1.2}
+    .stat-value{font-size:1.4rem;font-weight:700}
     
     .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47}
     .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc}
@@ -156,10 +156,10 @@ import { Observable } from 'rxjs';
     .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333}
 
     .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%}
-    .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch;margin-right:320px}
+    .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch}
     .side-cards{display:flex;flex-direction:column;gap:16px;height:100%}
 
-    .table-wrap{background:transparent;width:100%;margin-right:320px}
+    .table-wrap{background:transparent;width:100%}
     .section-title{margin:0 0 16px 0;font-size:1.1rem;font-weight:700;color:#0f172a}
 
     .right-sidebar{position:fixed;right:0;top:0;height:100vh;width:320px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);padding:28px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;border-left:1px solid rgba(2,6,23,0.06)}
@@ -192,6 +192,7 @@ import { Observable } from 'rxjs';
     @media (max-width: 1200px){ .stats{grid-template-columns:repeat(3,1fr)} .charts-section{grid-template-columns:1fr} .side-cards{display:grid;grid-template-columns:repeat(2,1fr)} .right-sidebar{width:280px} .table-wrap{margin-right:280px} .charts-section{margin-right:280px} }
     @media (max-width: 1024px){ .stats{grid-template-columns:repeat(2,1fr)} .charts-section{grid-template-columns:1fr} .side-cards{display:grid;grid-template-columns:1fr} .right-sidebar{width:100%;position:relative;height:auto;top:auto;border-left:none;border-top:1px solid rgba(2,6,23,0.06)} .table-wrap{margin-right:0} .charts-section{margin-right:0} }
     @media (max-width: 768px){ .stats{grid-template-columns:1fr} .main-area{padding:20px 24px} }
+    `
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
