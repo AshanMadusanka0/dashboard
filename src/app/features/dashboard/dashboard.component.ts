@@ -25,15 +25,7 @@ import { Observable } from 'rxjs';
             <button class="tab">Инвестиции</button>
             <button class="tab">ОДР</button>
           </div>
-
-          <!-- <div class="actions">
-            <label>Текущая заведений</label>        
-            <select class="filter">
-              <option>Все</option>
-              <option>Филиал A</option>
-              <option>Филиал B</option>
-            </select>
-          </div> -->
+          
         </header>
 
         <section class="grid">
@@ -160,6 +152,7 @@ import { Observable } from 'rxjs';
 
     .content-row{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
     .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:12px;align-items:stretch;height:auto}
+    .bar-graph canvas{height:280px !important;}
     .side-cards{display:flex;flex-direction:column;gap:12px}
     .side-cards app-chart-card{height:auto;width:92%}
 
