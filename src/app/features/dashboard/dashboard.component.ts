@@ -37,10 +37,26 @@ import { Observable } from 'rxjs';
 
         <section class="grid">
           <div class="stats">
-            <ng-container *ngIf="stats$ | async as stats">
-              <app-stat-card *ngFor="let s of stats" [title]="s.title" [value]="s.value" [colorClass]="s.color">
-              </app-stat-card>
-            </ng-container>
+            <div class="stat-item stat-beige">
+              <div class="stat-label">Количество заведений</div>
+              <div class="stat-value">6</div>
+            </div>
+            <div class="stat-item stat-blue">
+              <div class="stat-label">Все сотрудники</div>
+              <div class="stat-value">477</div>
+            </div>
+            <div class="stat-item stat-yellow">
+              <div class="stat-label">Количество заведений</div>
+              <div class="stat-value">6</div>
+            </div>
+            <div class="stat-item stat-green">
+              <div class="stat-label">Общии приход</div>
+              <div class="stat-value">120 647 000 сум</div>
+            </div>
+            <div class="stat-item stat-pink">
+              <div class="stat-label">Общий расход</div>
+              <div class="stat-value">12 407 000 сум</div>
+            </div>
           </div>
 
           <div class="content-row">
@@ -127,7 +143,17 @@ import { Observable } from 'rxjs';
     .filter:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.1)}
 
     .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;width:100%}
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;width:100%;margin-bottom:8px}
+    
+    .stat-item{padding:20px 16px;border-radius:12px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:110px}
+    .stat-label{font-size:0.95rem;font-weight:600;margin-bottom:12px;line-height:1.3}
+    .stat-value{font-size:1.8rem;font-weight:700}
+    
+    .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47}
+    .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc}
+    .stat-yellow{background:#fffef0;border-color:#f0e8d0;color:#8b8547}
+    .stat-green{background:#d4f5e8;border-color:#a8e6d0;color:#0d7f5c}
+    .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333}
 
     .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%}
     .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch;margin-right:320px}
@@ -166,7 +192,6 @@ import { Observable } from 'rxjs';
     @media (max-width: 1200px){ .stats{grid-template-columns:repeat(3,1fr)} .charts-section{grid-template-columns:1fr} .side-cards{display:grid;grid-template-columns:repeat(2,1fr)} .right-sidebar{width:280px} .table-wrap{margin-right:280px} .charts-section{margin-right:280px} }
     @media (max-width: 1024px){ .stats{grid-template-columns:repeat(2,1fr)} .charts-section{grid-template-columns:1fr} .side-cards{display:grid;grid-template-columns:1fr} .right-sidebar{width:100%;position:relative;height:auto;top:auto;border-left:none;border-top:1px solid rgba(2,6,23,0.06)} .table-wrap{margin-right:0} .charts-section{margin-right:0} }
     @media (max-width: 768px){ .stats{grid-template-columns:1fr} .main-area{padding:20px 24px} }
-    `
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
