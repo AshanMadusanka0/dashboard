@@ -25,14 +25,15 @@ import { Observable } from 'rxjs';
             <button class="tab">Инвестиции</button>
             <button class="tab">ОДР</button>
           </div>
-          <div class="actions">
-            <label>Текущая заведений</label>
+
+          <!-- <div class="actions">
+            <label>Текущая заведений</label>        
             <select class="filter">
               <option>Все</option>
               <option>Филиал A</option>
               <option>Филиал B</option>
             </select>
-          </div>
+          </div> -->
         </header>
 
         <section class="grid">
@@ -62,7 +63,7 @@ import { Observable } from 'rxjs';
           <div class="content-row">
             <div class="charts-section">
               <ng-container *ngIf="bar$ | async as bar">
-                <app-chart-card title="Приход / Расход по годам" [type]="'bar'" [labels]="bar.categories" [datasets]="bar.series"></app-chart-card>
+                <app-chart-card class="bar-graph" title="Приход / Расход по годам" [type]="'bar'" [labels]="bar.categories" [datasets]="bar.series"></app-chart-card>
               </ng-container>
 
               <div class="side-cards">
@@ -87,15 +88,16 @@ import { Observable } from 'rxjs';
         </section>
       </div>
 
-      <aside class="right-sidebar">
+       <aside class="right-sidebar">
+        
         <div class="right-sidebar-header">
-          <select class="location-select">
-            <option>Все</option>
-            <option>Филиал A</option>
-            <option>Филиал B</option>
-          </select>
-        </div>
-
+           <label>Текущая заведений</label>         
+            <select class="location-select">
+              <option>Все</option>
+              <option>Филиал A</option>
+              <option>Филиал B</option>
+            </select>
+          </div>
         <div class="calendar card">
           <div class="cal-nav">
             <button class="cal-btn">&lt;</button>
@@ -136,7 +138,7 @@ import { Observable } from 'rxjs';
     .tab{background:transparent;border:0;padding:10px 16px;border-radius:6px;color:#6b7280;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;white-space:nowrap}
     .tab:hover{color:#0f172a;background:rgba(2,6,23,0.04)}
     .tab.active{background:#1e3a8a;color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(30,58,138,0.2)}
-    .actions{display:flex;align-items:center;gap:12px;white-space:nowrap}
+    .actions{display:flex;align-items:center;gap:12px;white-space:nowrap;width:50%}
     .actions label{font-size:0.9rem;font-weight:600;color:#0f172a}
     .filter{padding:8px 12px;border-radius:6px;border:1px solid rgba(2,6,23,0.15);background:#fff;font-size:0.9rem;cursor:pointer;font-weight:500;color:#0f172a;transition:all 0.2s;min-width:100px}
     .filter:hover{border-color:rgba(2,6,23,0.3);background:#fbfdff}
@@ -149,6 +151,7 @@ import { Observable } from 'rxjs';
     .stat-label{font-size:0.7rem;font-weight:600;margin-bottom:4px;line-height:1.1}
     .stat-value{font-size:0.95rem;font-weight:700}
     
+    
     .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47;box-shadow:0 4px 12px rgba(139,111,71,0.12)}
     .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc;box-shadow:0 4px 12px rgba(0,102,204,0.12)}
     .stat-yellow{background:#fffef0;border-color:#f0e8d0;color:#8b8547;box-shadow:0 4px 12px rgba(139,133,71,0.12)}
@@ -158,13 +161,13 @@ import { Observable } from 'rxjs';
     .content-row{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
     .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:12px;align-items:stretch;height:auto}
     .side-cards{display:flex;flex-direction:column;gap:12px}
-    .side-cards app-chart-card{height:auto}
+    .side-cards app-chart-card{height:auto;width:92%}
 
     .table-wrap{background:transparent;width:100%}
     .section-title{margin:0 0 16px 0;font-size:1.1rem;font-weight:700;color:#0f172a}
 
     .right-sidebar{position:fixed;right:0;top:0;height:100vh;width:320px;background:linear-gradient(180deg,#f3f6fb,#eef3f8);padding:28px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;border-left:1px solid rgba(2,6,23,0.06)}
-    .right-sidebar-header{display:flex;align-items:center}
+    .right-sidebar-header{display:flex;flex-direction:column;width:80%; justify-content: center}
     .location-select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(2,6,23,0.1);background:#fff;font-size:0.9rem;font-weight:500;color:#0f172a;cursor:pointer;transition:all 0.2s}
     .location-select:hover{border-color:rgba(2,6,23,0.2);background:#fbfdff}
     .location-select:focus{outline:none;border-color:#1e40af;box-shadow:0 0 0 3px rgba(30,64,175,0.1)}
