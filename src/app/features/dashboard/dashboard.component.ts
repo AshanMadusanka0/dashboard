@@ -142,12 +142,12 @@ import { Observable } from 'rxjs';
     .filter:hover{border-color:rgba(2,6,23,0.3);background:#fbfdff}
     .filter:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.1)}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-right:320px}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;width:100%;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-right:320px;height:60%}
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;width:97%;margin-bottom:8px;height:100px;padding:10px 0px}
     
-    .stat-item{padding:14px 10px;border-radius:10px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:90px}
+    .stat-item{padding:14px 10px;border-radius:10px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:50px}
     .stat-label{font-size:0.8rem;font-weight:600;margin-bottom:6px;line-height:1.2}
-    .stat-value{font-size:1.4rem;font-weight:700}
+    .stat-value{font-size:1.0rem;font-weight:700}
     
     .stat-beige{background:#fef8f0;border-color:#e8d5c4;color:#8b6f47}
     .stat-blue{background:#cce5ff;border-color:#99c7ff;color:#0066cc}
@@ -155,9 +155,10 @@ import { Observable } from 'rxjs';
     .stat-green{background:#d4f5e8;border-color:#a8e6d0;color:#0d7f5c}
     .stat-pink{background:#ffd9d9;border-color:#ffb3b3;color:#cc3333}
 
-    .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%}
+    .content-row{display:grid;grid-template-columns:1fr;gap:18px;width:100%;height:95%}
     .charts-section{display:grid;grid-template-columns:1.8fr 0.9fr;gap:16px;align-items:stretch}
-    .side-cards{display:flex;flex-direction:column;gap:16px;height:100%}
+    .side-cards{display:flex;flex-direction:column;gap:16px;height:50%} 
+    .side-cards app-chart-card{height:90%;width:90%}
 
     .table-wrap{background:transparent;width:100%}
     .section-title{margin:0 0 16px 0;font-size:1.1rem;font-weight:700;color:#0f172a}

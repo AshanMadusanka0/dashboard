@@ -131,7 +131,7 @@ import { CommonModule } from '@angular/common';
 </nav>
 
 
-      <!-- //////////////////////////////// -->
+      
       <div class="side-cta"> 
         <button class="logout">⤴</button>
       </div>
